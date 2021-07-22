@@ -1,0 +1,65 @@
+main {
+    padding: 3rem 4rem; 
+
+    @media only screen and (max-width: 375px){
+        padding: 3rem 2rem;
+    }
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 700px){
+        flex-direction: column;
+        row-gap: 3rem;
+    }
+}
+
+.countries-list {
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 8rem;
+    row-gap: 8rem;
+
+    @media only screen and (max-width: 1100px){
+        column-gap: 4rem;
+        row-gap: 4rem;
+    }
+
+    @media only screen and (max-width: 900px){
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    @media only screen and (max-width: 750px){
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    @media only screen and (max-width: 500px){
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+.buttons-wrapper {
+    margin-bottom: 2rem;
+}
+
+.details-container {
+    display: flex;
+    column-gap: 10rem;
+    align-items: center;
+
+    @media only screen and (max-width: 1000px){
+        flex-direction: column;
+        width: 60rem;
+        margin: 0 auto;
+    }
+
+    @media only screen and (max-width: 700px){
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+

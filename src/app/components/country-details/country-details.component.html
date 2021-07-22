@@ -1,0 +1,67 @@
+<div class="buttons-wrapper">
+    <button class="btn" [routerLink]="['/']">
+        <i class="fa fa-arrow-left"></i>
+        Back
+    </button>
+</div>
+
+<span *ngIf="loading" class="loading-text">Loadig...</span>
+
+<div class="details-container" *ngIf="countryDetails && !loading">
+    <div class="flag">
+        <img [src]="countryDetails.flag" [alt]="countryDetails.name">
+    </div>
+    <div class="details">
+        
+        <h3 class="details__heading">
+            {{ countryDetails.name }}
+        </h3>
+
+        <div class="details__info">
+            <div>
+                <p>
+                    <span class="bold">Native Name:</span>
+                    {{ countryDetails.nativeName }}
+                </p>
+                <p>
+                    <span class="bold">Population:</span>
+                    {{ countryDetails.population | number:'.0' }}
+                </p>
+                <p>
+                    <span class="bold">Region:</span>
+                    {{ countryDetails.region }}
+                </p>
+                <p>
+                    <span class="bold">Sub Region:</span>
+                    {{ countryDetails.subregion }}
+                </p>
+                <p>
+                    <span class="bold">Capital:</span>
+                    {{ countryDetails.capital }}
+                </p>
+            </div>
+            <div>
+                <p>
+                    <span class="bold">Top Level Domain:</span>
+                    {{ topLevelDomains }}
+                </p>
+                <p>
+                    <span class="bold">Currencies:</span>
+                    {{ currencies }}
+                </p>
+                <p>
+                    <span class="bold">Languages:</span>
+                    {{ languages }}
+                </p>
+            </div>
+        </div>
+
+        <div class="details__borders">
+            <span>Border Countries: </span>
+            <button [routerLink]="['/'+country.alpha3Code]" *ngFor="let country of borderCountries" class="btn">
+                {{ country.name }}
+            </button>
+        </div>
+
+    </div>
+</div>

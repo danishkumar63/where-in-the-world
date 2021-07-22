@@ -1,0 +1,44 @@
+<div class="filters">
+    <div class="form-control">
+        <span class="form-control__icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <input type="text" [(ngModel)]="searchFilter" (ngModelChange)="onFilter()" placeholder="Search for a country..." class="form-control__input">
+    </div>
+    <div class="select-control">
+        <select id="select-input" name="region_input" (ngModelChange)="onFilter()" [(ngModel)]="currentFilter">
+            <option value="" disabled selected hidden>
+                Filter By Region
+            </option>
+            <option *ngFor="let region of regions" [value]="region.title">
+                {{ region.title }}
+            </option>
+        </select>
+        <span class="select-control__icon">
+            <i class="fa fa-chevron-down"></i>
+        </span>
+    </div>
+</div>
+
+<div class="countries-list">
+    <div class="card" (click)="onSelectCountry(country)" *ngFor="let country of countries">
+        <img [src]="country.flag" loading=lazy class="card__flag" [alt]="country.name">
+        <div class="card__details">
+            <h3 class="card__title">
+                {{ country.name }}
+            </h3>
+            <p class="card__text">
+                <span class="bold">Population:</span>
+                {{ country.population | number:'.0' }}
+            </p>
+            <p class="card__text">
+                <span class="bold">Region:</span>
+                {{ country.region }}
+            </p>
+            <p class="card__text">
+                <span class="bold">Population:</span>
+                {{ country.capital }}
+            </p>
+        </div>
+    </div>
+</div>

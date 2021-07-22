@@ -1,0 +1,66 @@
+.card {
+
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 500px){
+        width: 30rem;
+        margin: 0 auto;
+    }
+
+    &__flag {
+        width: 100%;
+    }
+
+    &__details {
+        padding: 3rem;
+        padding-bottom: 6rem;
+        transition: all 0.2s;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        padding-bottom: 2rem;
+        transition: all 0.2s;
+    }
+
+    &__text {
+        font-size: $text-size-home;
+        padding: 3px 0;
+    }
+
+    .bold {
+        font-weight: 700;
+    }
+}
+
+.night-mode .card {
+    background-color: $color-dark-main;
+    box-shadow: $shadow-dark-small;
+
+    &__title {
+        color: $color-dark-text;
+    }
+
+    &__details {
+        color: $color-dark-text;
+    }
+}
+
+.day-mode .card {
+    background-color: $color-light-main;
+    box-shadow: $shadow-light-small;
+
+    &__title {
+        color: $color-light-text;
+    }
+
+    &__details {
+        color: $color-light-text;
+    }
+}

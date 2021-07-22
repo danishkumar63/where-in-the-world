@@ -1,0 +1,10 @@
+<nav class="navigation">
+    <h1 class="navigation__heading">
+        Where in the world?
+    </h1>
+    <button (click)="onToggle()" class="navigation__dark-mode">
+        <i *ngIf="nightMode.currentMode == 'Day'" class="far fa-moon"></i>
+        <i *ngIf="nightMode.currentMode == 'Night'" class="fa fa-moon"></i>
+        Dark Mode
+    </button>
+</nav>
